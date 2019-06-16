@@ -1,0 +1,44 @@
+<div fxLayout="row" fxLayoutGap="10px">
+    <app-filter></app-filter>
+    <div>
+        <app-search></app-search>
+        <div>
+            <p>
+              
+              <span>Results: {{establishments.length}}</span>
+              <span class="sort-buttons">Sort By Rating Only
+                <mat-icon (click)="getRatingValue()">swap_vertical</mat-icon> Price Only<mat-icon (click)="getPrice()">
+                  swap_vertical</mat-icon>
+              </span>
+          
+            </p>
+          </div>
+            <hr>
+          <mat-card>
+            <div *ngFor="let booking of establishments" fxLayout="row wrap" fxLayoutGap="10px"><br>
+              
+              <img class="images" src="../../../assets/images/download.jpg" border="0" none padding="0" width="250px"
+                height="250px"><br>
+          
+              <div fxFlex="3 3 calc(30em +a 30px)">
+                <h3>{{booking.name}}</h3>
+                <h6>{{booking.location}}&nbsp;&nbsp;{{booking.city}}</h6>
+                <h6>Car parking | First Aid | Wifi Facility</h6>
+                <h6><span><i class="material-icons">star</i>{{booking.averageRating}}</span>&nbsp;&nbsp;
+                  {{booking.price| currency:'&#8377;'}}</h6>
+          
+          
+                <button mat-raised-button color="primary">View Details</button>&nbsp;
+          
+          
+                <button mat-raised-button color="warn">Booking Now</button>
+             
+          
+          
+          
+          
+              </div>
+            </div>
+          </mat-card>  
+    </div>
+</div>

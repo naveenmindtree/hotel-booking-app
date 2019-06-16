@@ -1,0 +1,41 @@
+<form [formGroup]="filterform" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <h4>Filter</h4>
+    <mat-form-field>
+      <input matInput placeholder="Search" formControlName="Search" required>
+
+    </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <h4>Type</h4>
+    <mat-checkbox formControlName="Hotel">Hotel</mat-checkbox><br>
+    <mat-checkbox formControlName="RoomStay">RoomStay</mat-checkbox>
+  </mat-card>
+
+  <mat-card>
+    <h4>Rating</h4>
+    <input matInput placeholder="Rating" formControlName="Rating" required>
+    <span *ngFor="let item of [1,2,3,4]" (click)="setRating(4)">
+      <i class="material-icons">star</i>
+    </span><a></a><br>
+    <span *ngFor="let item of [1,2,3]" (click)="setRating(3)">
+      <i class="material-icons">star</i>
+    </span><a></a><br>
+    <span *ngFor="let item of [1,2]" (click)="setRating(3)">
+        <i class="material-icons">star</i>
+      </span><a></a><br>
+    <span *ngFor="let item of [1]" (click)="setRating(2)">
+      <i class="material-icons">star</i>
+    </span><a></a>
+  </mat-card>
+
+
+  <mat-card>
+    <h4>Price</h4>
+
+    <mat-slider formControlName="Price" min="1000" max ="10000 " step="100" >
+    </mat-slider><br>
+    <div (click)="min1()">{{minvalue}}</div>
+    <div (click)="max1()">{{maxvalue}}</div>
+  </mat-card>
+</form>

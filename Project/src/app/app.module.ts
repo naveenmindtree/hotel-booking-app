@@ -33,6 +33,8 @@ import { BookinglistComponent } from './booking/bookinglist/bookinglist.componen
 import { BookingviewdetailsComponent } from './bookingviewdetails/bookingviewdetails.component';
 import { RouterModule, Routes, } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { BookingitemComponent } from './booking/bookingitem/bookingitem.component';
+import { SearchcriteriaComponent } from './booking/searchcriteria/searchcriteria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,10 @@ import { AppRoutingModule } from './app-routing.module';
     BookinglistComponent,
      
     BookingviewdetailsComponent,
+     
+    BookingitemComponent,
+     
+    SearchcriteriaComponent,
      
     
     

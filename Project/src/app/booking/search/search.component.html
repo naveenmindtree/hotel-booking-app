@@ -1,15 +1,19 @@
+<form [formGroup]="searchform" (ngSubmit)="onSubmit()">
 <div fxLayout="row" fxLayoutGap="50px">
   <mat-form-field>
-      <input matInput placeholder="Location" [(ngModel)]="loc">
+      <input matInput placeholder="Location" formControlName="location" required>
+      "searchform.location.$touched && location.$invalid"
     </mat-form-field>
     <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date"  [(ngModel)]="date">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" required >
+        
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
-          <input matInput placeholder="No fo Guest" [(ngModel)]="guest">
-          <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <input matInput placeholder="No fo Guest" formControlName="guest">
+           <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"> 
             <mat-icon><i class="material-icons" (click)="getAdd()">add</i></mat-icon>
           </span>
         </mat-form-field>
@@ -19,4 +23,4 @@
         <!-- <button mat-raised-button color="primary">Search</button>&nbsp; -->
 </div>
 
-
+</form>

@@ -33,7 +33,7 @@ establishmentsubject=new Subject <Establishment[]>();
     
 
   getFilter(sdata)
-     {
+     {  
           console.log(sdata)
 let filterData=[];
 filterData = this.establishments.filter(word =>word.price >=sdata.Price);
@@ -53,5 +53,9 @@ console.log(filterData)
 this.establishmentsubject.next(filterData);
   }
 
-  
+  getLocation(locdata)
+  {
+    let locationData=[];
+    locationData=this.establishments.filter(loc=>loc.city>=locdata.location);
+  }
     }

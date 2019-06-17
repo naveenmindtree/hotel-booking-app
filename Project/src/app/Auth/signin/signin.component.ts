@@ -21,7 +21,7 @@ export class SigninComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { 
+  getf() { 
       return this.signinForm.controls; 
     }
 

@@ -15,7 +15,7 @@ export class BookinglistComponent implements OnInit {
   rating=0;
   price=0;
   user;
-  sortform: FormGroup;
+  
   constructor(private establishmentservice:EstablishmentService, private formBuilder:FormBuilder) { }
 
 

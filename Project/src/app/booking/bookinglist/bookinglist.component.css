@@ -4,27 +4,41 @@
   margin-right: 8px;
 } */
 
-img{
-  padding: 10px
+images{
+  padding: 70px;
+  margin-left:10px;
 }
 
-example-container {
+/* example-container {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: #eee;
-}
+} */
 .mat-icon{
   padding:2px;
-  cursor:pointer;
+  cursor:pointer;  
 }
-#main {
+/* #main {
   display: flex;
   flex-direction:row-reverse;
-}
-mat-card
+} */
+
+
+full-width
 {
-width: 1000px;
+  width:full-width;
+}
+.sort-buttons{
+  float:right;
+
+}
+Booking
+{
+  margin-left:10px;
+}
+View{
+  margin-right:10px;
 }

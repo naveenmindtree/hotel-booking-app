@@ -1,0 +1,23 @@
+/* images
+{
+    padding:70px;
+    margin-left: 10px
+}
+full-width{
+    width:full-width;
+}
+View{
+    margin-right: 10px;
+}
+Booking{
+    margin-left: 10px;
+}
+.sort-buttons{
+    float: right;
+
+  } */
+
+  mat-card
+  {
+      padding:20px;
+  }

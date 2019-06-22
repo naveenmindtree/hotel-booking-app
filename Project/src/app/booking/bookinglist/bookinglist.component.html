@@ -1,31 +1,25 @@
-
-<div fxLayout="row">
-  <app-filter></app-filter>
-  <div>
-      <app-search></app-search>
+<div fxLayout="row wrap">
+  <app-filter fxFlex="20%"></app-filter>
+  <div fxFlex="80%">
+    <app-hotelsearch></app-hotelsearch>
+    <div>
       <div>
-          <div>
-              <p>
-                  <span>Results: {{establishments.length}}</span>
-                <span class="sort-buttons"  >Sort By Rating Only
-                  <mat-icon (click)="getRatingValue()">swap_vertical</mat-icon> Price Only<mat-icon (click)="getPrice()">swap_vertical</mat-icon>
-                  </span> 
-                  
-                </p>
-                <hr>
-            </div>
-          <mat-card fxLayout="row wrap">
-            
-            <div *ngFor="let establishment of establishments"  fxflex>
-          
-              <app-bookingitem [hotelItem]="establishment"></app-bookingitem>
-          
-            </div>
-          </mat-card>
-          
-      </div> 
-  </div>   
+        <div>
+          <p>
+            <span>Results: {{establishments.length}}</span>
+            <span class="sort-buttons">Sort By Rating Only
+              <mat-icon (click)="getRatingValue()">swap_vertical</mat-icon> Price Only<mat-icon (click)="getPrice()">
+                swap_vertical</mat-icon>
+            </span>
+          </p>
+          <hr>
+        </div>
+        <mat-card fxLayout="row wrap">
+          <div *ngFor="let establishment of establishments" fxFlex="45%">
+            <app-bookingitem [hotelItem]="establishment"></app-bookingitem>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-

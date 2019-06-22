@@ -25,17 +25,17 @@
         <i class="material-icons">star</i>
       </span><a></a><br>
     <span *ngFor="let item of [1]" (click)="setRating(2)">
-      <i class="material-icons">star</i>
+      <i class="material-icons">star</i>                                                                
     </span><a></a>
   </mat-card>
 
 
   <mat-card>
     <h4>Price</h4>
-
-    <mat-slider formControlName="Price" min="1000" max ="10000 " step="100" >
-    </mat-slider><br>
-    <div (click)="min1()">{{minvalue}}</div>
-    <div (click)="max1()">{{maxvalue}}</div>
+ <mat-slider [min]="1000" [max]="10000" step="100" formControlName="Price" required>
+    </mat-slider><br> 
+    <div>{{filterform.value.Price}}</div>
+      <div>10000</div>
   </mat-card>
 </form>
+

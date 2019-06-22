@@ -1,0 +1,35 @@
+<mat-tab-group>
+  <mat-tab label="PostBooking">
+     <div  fxLayout="row wrap" *ngFor="let list of checkIn">
+      <img src="../../../assets/images/search5.jpg" style="height: 285px;width:380px;">
+      <div >
+        <!-- <h3>{{list.booked_by.name}}</h3> -->
+          <h3>{{list.establishment.name}}</h3>
+        <h6>Location&nbsp;&nbsp;Banglore</h6>
+        <h6>Car Parking | Car Parking | Car Parking</h6>
+        <h6><span><i class="material-icons">star</i>4</span></h6>
+        <h5>{{list.cost | currency:'&#8377;'}}1Room {{list.noofperson}} Guest</h5>
+        <h5> FromDate:{{list.Checkindate|date}}</h5>
+        <h5> ToDate:{{list.checkoutdate|date}}</h5>
+        <button mat-button class="book"> Book Now</button>&nbsp;
+        <button mat-button class="view" >Post Review</button>&nbsp;
+        <button mat-button class="view" >Raising Complent </button>&nbsp;
+        
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="UpComming Booking">
+      <div  fxLayout="row wrap" *ngFor="let list of checkOut">
+          <img src="../../../assets/images/download.jpg" style="height: 224px;width:380px;">
+          <div >
+              <!-- <h3>{{list.booked_by.name}}</h3> -->
+              <h3>{{list.establishment.name}}</h3>
+              <h6>Location&nbsp;&nbsp;Banglore</h6>
+              <h6>Car Parking | Car Parking | Car Parking</h6>
+              <h6><span><i class="material-icons">star</i>4</span></h6>
+              <h5>{{list.cost | currency:'&#8377;'}}(1Room {{list.noofperson}} Guest)</h5>
+              <h5>{{list.checkoutdate|date}}</h5>
+          </div>
+         </div> 
+ </mat-tab>
+</mat-tab-group>

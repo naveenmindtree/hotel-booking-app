@@ -5,16 +5,22 @@ import { Review } from './review.model';
 
 export class Establishment{
 id:number;
-name:string;
+name : string;
 type: string;
 price: number;
 location :string;
 city: string;
 capacity: number;
 isBlock: boolean;
-averageRating: number;
+averagerating: number;
 reviews:Review[];
 bookingList:Booking[];
 amenities: string[];
 owner:User;
+constructor(name:string, averageRating:number, price:number)
+{   this.name=name;
+    this.averagerating=averageRating;
+    this.price=price;
+
+}
 }

@@ -21,10 +21,35 @@
   button{
     background-color: #0085ff;
     width: 30px;
-    margin-top: 20px
+    margin-top: 40px
 }
 mat-card{
   width: 50%;
   margin:auto;
-  margin-top: 30px;
+  margin-top:-20%;
 }
+
+.bgimage
+{
+  
+  
+top: 45px;
+padding:20%;
+background-image: url('../../../assets/images/checkin.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; 
+height: 100%; 
+}
+
+
+
+
+
+
+
+
+
+
+
+

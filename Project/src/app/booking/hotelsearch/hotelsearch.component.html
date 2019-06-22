@@ -1,0 +1,31 @@
+<div class ="column">
+<form [formGroup]="searchform" (ngSubmit)="onSubmit()">
+  <div fxLayout="row" fxLayoutGap="50px">
+    <mat-form-field>
+        <input matInput placeholder="Location"  formControlName="location" required>
+         <mat-error *ngIf="searchform.get('location').invalid">{{getLocationError()}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" required >
+          
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="No of Guest" formControlName="guest">
+             <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"> 
+              <mat-icon><i class="material-icons" (click)="getAdd()">add</i></mat-icon>
+            </span>
+          </mat-form-field>
+           
+          <!-- <button mat-button>Search</button> -->
+          <!-- <button type="submit" [disabled]="searchform.invalid" mat-raised-button color="primary">Search</button> -->
+          <!-- <button mat-raised-button color="primary">Search</button>&nbsp; -->
+          <button    mat-raised-button color="primary">Search</button>
+  
+  </div>
+  
+  </form>
+</div>

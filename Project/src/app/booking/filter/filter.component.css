@@ -1,0 +1,26 @@
+/* mat-checkbox{
+    display:block
+    }
+    button{
+    margin-top: -5px;
+    }
+    span{
+    margin:10px;
+    } */
+
+    mat-card
+    {
+        /* width: 150px; */
+    }
+    mat-slider
+    {
+        width: 220px;
+    }
+    mat-checkbox
+    {
+        display: block;
+    }
+    .mat-icon
+    {
+        cursor: pointer;
+    }

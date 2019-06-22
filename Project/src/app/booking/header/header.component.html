@@ -1,0 +1,12 @@
+
+
+<mat-toolbar>
+  <span ><i style="color:#918e9c;">Book my Room </i></span>
+  <span style="margin-left:68%">
+  <button mat-raised-button color="primary" class="signin" routerLink="/signin" *ngIf="!isLoggedIn">Signin</button>&nbsp;
+  <button mat-raised-button color="primary" class="a" routerLink="/myBooking" *ngIf="isLoggedIn">MyBooking</button>&nbsp;
+  <button mat-raised-button  color="primary" class="b"  *ngIf="isLoggedIn" (click)="auth.logout()">Logout </button>&nbsp;
+  <button mat-raised-button  color="primary" class="c"  routerLink="/profile" *ngIf="isLoggedIn">EditProfile</button>               
+  
+  </span>
+</mat-toolbar>

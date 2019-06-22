@@ -1,17 +1,22 @@
 <mat-card  fxLayout="row wrap" fxLayoutAlign="start stretch" fxLayoutGap="20px">
   <div fxLayout="row wrap" fxLayoutGap="10px">  
-      
-      <img class="images" src="../../../assets/images/download.jpg"  width="200px" height="200px">
+    <img class="images" src="../../../assets/images/download.jpg"  width="100px" height="100px">
+
       <div >
         <h3>{{hotelItem.name}}</h3>
         <h6>{{hotelItem.location}}&nbsp;&nbsp;{{hotelItem.city}}</h6>
         <h6>Car parking | First Aid | Wifi Facility</h6>
-        <h6><span><i class="material-icons">star</i>{{hotelItem.averageRating}}</span>&nbsp;&nbsp;
+        <h6><span><i class="material-icons">star</i>{{hotelItem.averagerating}}</span>&nbsp;&nbsp;
         {{hotelItem.price| currency:'&#8377;'}}</h6>
         
-        <button mat-raised-button class="View" color="primary">View Details</button>&nbsp;
-        <button mat-raised-button  class="Booking" color="accent">Booking Now</button>
-        </div>
+  
+  <!-- <button mat-raised-button   routerLink="/Viewdetails" routerLinkActive="active"  class="View" color="primary" >View Details</button>&nbsp; -->
+ 
+  <button mat-raised-button class="View" color="primary" routerLink="/Viewdetails/{{hotelItem.id}}">View Details</button>&nbsp;
+
+  <button mat-raised-button  class="Booking" color="accent" routerLink="/Viewdetails/{{hotelItem.id}}">Booking Now</button>
+                                                                  
+</div>
       </div>
 </mat-card>
 
@@ -32,29 +37,4 @@
 
 
 
-<!-- <mat-card>
-  <div *ngFor="let booking of establishments" fxLayout="row wrap" fxLayoutGap="10px"><br>
-    
-    <img class="images" src="../../../assets/images/download.jpg" border="0" none padding="0" width="250px"
-      height="250px"><br>
 
-    <div fxFlex="3 3 calc(30em +a 30px)">
-      <h3>{{booking.name}}</h3>
-      <h6>{{booking.location}}&nbsp;&nbsp;{{booking.city}}</h6>
-      <h6>Car parking | First Aid | Wifi Facility</h6>
-      <h6><span><i class="material-icons">star</i>{{booking.averageRating}}</span>&nbsp;&nbsp;
-        {{booking.price| currency:'&#8377;'}}</h6>
-
-
-      <button mat-raised-button color="primary">View Details</button>&nbsp;
-
-
-      <button mat-raised-button color="warn">Booking Now</button>
-   
-
-
-
-
-    </div>
-  </div>
-</mat-card>   -->

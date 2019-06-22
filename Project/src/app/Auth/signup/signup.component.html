@@ -1,41 +1,61 @@
-<mat-card>
-  <!-- Title of an Card -->
-  <mat-card-title>
-    Sign Up
-  </mat-card-title>
+<div class="bgimage">
+  <mat-card>
+    <!-- Title of an Card -->
+    <mat-card-title>
+      Sign Up
+    </mat-card-title>
 
-  <!-- Actual content starts from here -->
-  <mat-card-content>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-      <div class="example-container">
+    <!-- Actual content starts from here -->
+    <mat-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="example-container">
           <mat-form-field>
-      <input matInput placeholder="Enter your phoneNumber" formControlName="phoneNumber" required>
+            <input matInput placeholder="username" formControlName="username" required>
+            <mat-error *ngIf="f.username.errors">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+            </mat-error>
+          </mat-form-field>
+          
+            <!-- <mat-form-field>
+              <input matInput placeholder="lastname" formControlName="lname" required>
+
+            </mat-form-field> -->
+            <mat-form-field>
+              <input matInput placeholder="Enter your phoneNumber" formControlName="phoneNumber" required>
               <mat-error *ngIf="f.phoneNumber.errors">
                 <div *ngIf="f.phoneNumber.errors.required">phoneNumber is required</div>
                 <div *ngIf="f.phoneNumber.errors.pattern">phoneNumber must be a valid phoneNumber </div>
               </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Enter your email" formControlName="email" required>
-          <mat-error *ngIf="f.email.errors">
-            <div *ngIf="f.email.errors.required">Email is required</div>
-            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Enter your password" formControlName="password" required
-            [type]="hide ? 'password' : 'text'">
-          <mat-error *ngIf="f.password.errors">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-            <div *ngIf="f.password.errors.pattern">
-              Password must be At least 8 characters in length one Lowercase letters
-              One Uppercase letters one Numbers One Special characters
-            </div>
-          </mat-error>
-        </mat-form-field>
-        <button mat-button>Sign Up</button>
-      </div>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your email" formControlName="email" required>
+              <mat-error *ngIf="f.email.errors">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your password" formControlName="password" required
+                [type]="hide ? 'password' : 'text'">
+              <mat-error *ngIf="f.password.errors">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.pattern">
+                  Password must be At least 8 characters in length one Lowercase letters
+                  One Uppercase letters one Numbers One Special characters
+                </div>
+              </mat-error>
+            </mat-form-field>
 
-    </form>
-  </mat-card-content>
-</mat-card>
+            <p>
+              <mat-radio-group formControlName="role" aria-label="Select an option">
+                <mat-radio-button value="user">User</mat-radio-button>
+                <mat-radio-button value="merchant">Merchant</mat-radio-button>
+              </mat-radio-group>
+            </p>
+            <button [disabled]="signupForm.invalid" mat-button type="submit">Sign Up</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

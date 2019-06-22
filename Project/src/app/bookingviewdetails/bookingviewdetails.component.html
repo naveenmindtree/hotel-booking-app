@@ -1,3 +1,58 @@
-<p>
-  bookingviewdetails works!
-</p>
+<form [formGroup]="bookingform" (ngSubmit)="onSubmit()" *ngIf="bookingView">
+    <img src="../../../assets/images/download.jpg" style="width: 100%;height:300px;">
+
+    <span style="display:flex; justify-content:flex-end; width:100%; ">
+        <button mat-raised-button class="BookNow" color="primary">BookNow</button>
+    </span>
+    <div>
+        <span><b>{{bookingView.name}}</b></span>
+        <span style="float: right"><b>Price</b>:{{bookingView.price *count}}/Room</span><br><br>
+        <!-- <button mat-button>Book New</button> -->
+        <p><b>Guest</b>:{{bookingView.capacity}}</p>
+        <p><b>Number Of Days</b>:{{count}}</p>
+        <p><b>Location</b>:{{bookingView.location}} </p>
+
+
+        <div *ngFor="let review of reviews">
+            <p>{{review.reviewcontent}} </p>
+            <p>{{review.reviewed_by.name}}</p>
+            <p>{{review.rating.rating}}</p>
+
+        </div>
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="From date" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="To date" [min]="minDate" formControlName="todate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <hr>
+    <mat-card>
+    <div *ngFor="let review of bookingView.reviews" class=div2 fxLayout="row">
+        <div>
+            <img src="../../../assets/images/avatar.jpg" style="width: 45px;height:45px;">
+
+            <p >{{review.reviewed_by.name}}</p>
+        </div>
+      <div class="column" style="margin-left: 50px">
+      <div class="row">
+            <span *ngFor="let icon of [].constructor(review.rating)"><mat-icon>star</mat-icon></span>
+        </div>
+        
+          <p> {{review.reviewcontent}} </p> 
+      </div>
+       
+     
+      
+      
+      </div>
+      
+   
+    </mat-card>
+</form>
